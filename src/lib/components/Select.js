@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 
 const Select = ({ id, textLabel, selectClass, value, handleChange, optionClass, arr }) => {

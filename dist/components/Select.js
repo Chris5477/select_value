@@ -21,8 +21,7 @@ var Select = function Select(_ref) {
       handleChange = _ref.handleChange,
       optionClass = _ref.optionClass,
       arr = _ref.arr;
-  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-    className: "select-menu",
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
     children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("label", {
       htmlFor: id,
       children: textLabel

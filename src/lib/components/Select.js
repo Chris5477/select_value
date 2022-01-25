@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Select = ({ id, textLabel, selectClass, value, handleChange, optionClass, arr }) => {
 	return (
-		<div className="select-menu">
+		<>
 			<label htmlFor={id}>{textLabel}</label>
 			<select className={selectClass} id={id} value={value} onChange={(e) => handleChange(e)}>
 				{arr.map(({ val, text }, index) => (
@@ -12,7 +12,7 @@ const Select = ({ id, textLabel, selectClass, value, handleChange, optionClass, 
 					</option>
 				))}
 			</select>
-		</div>
+		</>
 	);
 };
 

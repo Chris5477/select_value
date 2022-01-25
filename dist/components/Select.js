@@ -30,7 +30,7 @@ var Select = function Select(_ref) {
       id: id,
       value: value,
       onChange: function onChange(e) {
-        return handleChange(e);
+        return handleChange && handleChange(e);
       },
       children: arr.map(function (_ref2, index) {
         var val = _ref2.val,
@@ -49,7 +49,7 @@ Select.propTypes = {
   id: _propTypes.default.string,
   textLabel: _propTypes.default.string,
   selectClass: _propTypes.default.string,
-  value: _propTypes.default.string,
+  value: _propTypes.default.any,
   handleChange: _propTypes.default.func,
   optionClass: _propTypes.default.string,
   arr: _propTypes.default.array.isRequired

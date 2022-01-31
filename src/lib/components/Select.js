@@ -5,9 +5,9 @@ const Select = ({ id, textLabel, selectClass, handleChange, optionClass, arr }) 
 	return (
 		<>
 			<label htmlFor={id}>{textLabel}</label>
-			<select className={selectClass} id={id} onChange={(e) => handleChange && handleChange(e)}>
+			<select data-testid="jest" className={selectClass} id={id} onChange={(e) => handleChange && handleChange(e)}>
 				{arr.map(({ value, text }, index) => (
-					<option className={optionClass} key={`index ${index}`} value={value}>
+					<option data-testid="jest-option" className={optionClass} key={`index ${index}`} value={value}>
 						{text}
 					</option>
 				))}

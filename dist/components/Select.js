@@ -25,6 +25,7 @@ var Select = function Select(_ref) {
       htmlFor: id,
       children: textLabel
     }), /*#__PURE__*/(0, _jsxRuntime.jsx)("select", {
+      "data-testid": "jest",
       className: selectClass,
       id: id,
       onChange: function onChange(e) {
@@ -34,6 +35,7 @@ var Select = function Select(_ref) {
         var value = _ref2.value,
             text = _ref2.text;
         return /*#__PURE__*/(0, _jsxRuntime.jsx)("option", {
+          "data-testid": "jest-option",
           className: optionClass,
           value: value,
           children: text

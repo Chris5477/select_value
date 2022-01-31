@@ -1,4 +1,4 @@
-# ![alt text](illustration.png)
+# ![alt text](dist/assets/illustration.png)
 
 # Select_menu
 
@@ -55,6 +55,6 @@ Allows to select an option among those available
 
 Chris5477
 
-![alt text](github-icon.png) [ Mon Github](https://github.com/Chris5477)
+![alt text](dist/assets/github-icon.png) [ Mon Github](https://github.com/Chris5477)
 
 # Thank you

@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Select = ({ id, textLabel, selectClass, value, handleChange, optionClass, arr }) => {
+const Select = ({ id, textLabel, selectClass, handleChange, optionClass, arr }) => {
 	return (
 		<>
 			<label htmlFor={id}>{textLabel}</label>
-			<select className={selectClass} id={id} value={value} onChange={(e) => handleChange && handleChange(e)}>
-				{arr.map(({ val, text }, index) => (
-					<option className={optionClass} key={`index ${index}`} value={val}>
+			<select className={selectClass} id={id} onChange={(e) => handleChange && handleChange(e)}>
+				{arr.map(({ value, text }, index) => (
+					<option className={optionClass} key={`index ${index}`} value={value}>
 						{text}
 					</option>
 				))}
@@ -20,7 +20,6 @@ Select.propTypes = {
 	id: PropTypes.string,
 	textLabel: PropTypes.string,
 	selectClass: PropTypes.string,
-	value: PropTypes.any,
 	handleChange: PropTypes.func,
 	optionClass: PropTypes.string,
 	arr: PropTypes.array.isRequired,

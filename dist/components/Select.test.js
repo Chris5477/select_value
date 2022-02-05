@@ -19,20 +19,32 @@ describe("Given a new package npm", function () {
     text: "Femme"
   }];
   describe("Testin Select component", function () {
-    beforeEach(function () {
-      return (0, _react.render)( /*#__PURE__*/(0, _jsxRuntime.jsx)(_Select.default, {
+    test("Should render component", function () {
+      (0, _react.render)( /*#__PURE__*/(0, _jsxRuntime.jsx)(_Select.default, {
         id: "idSelect",
         textLabel: "Votre sexe :",
         selectClass: "select-class",
+        handleChange: function handleChange() {
+          return null;
+        },
         optionClass: "class-option",
         arr: array
       }));
-    });
-    test("Should render component", function () {
       var textLabel = document.getElementById("idSelect");
       expect(textLabel).toBeInTheDocument();
     });
     test("Should show all options", function () {
+      (0, _react.render)( /*#__PURE__*/(0, _jsxRuntime.jsx)(_Select.default, {
+        id: "idSelect",
+        textLabel: "Votre sexe :",
+        selectClass: "select-class",
+        handleChange: function handleChange() {
+          return null;
+        },
+        optionClass: "class-option",
+        arr: array
+      }));
+
       var firstOption = _react.screen.getAllByText("Homme");
 
       var secondOption = _react.screen.getAllByText("Femme");
@@ -40,17 +52,21 @@ describe("Given a new package npm", function () {
       expect(firstOption).toBeTruthy();
       expect(secondOption).toBeTruthy();
     });
-    test("Should change value of select", function () {
+    test("Should call handleChange", function () {
+      var mockChange = jest.fn();
+      (0, _react.render)( /*#__PURE__*/(0, _jsxRuntime.jsx)(_Select.default, {
+        id: "idSelect",
+        textLabel: "Votre sexe :",
+        selectClass: "select-class",
+        handleChange: mockChange,
+        optionClass: "class-option",
+        arr: array
+      }));
       var select = document.getElementById("idSelect");
-      expect(select.value).toBe("man");
 
-      _react.fireEvent.change(select, {
-        target: {
-          value: "woman"
-        }
-      });
+      _react.fireEvent.change(select);
 
-      expect(select.value).toBe("woman");
+      expect(mockChange.mock.calls.length).toBe(1);
     });
   });
 });
